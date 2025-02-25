@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <title>Frontend Mentor | Space tourism website</title>
+  <style>
+      *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+      }
+      body{
+          background-image: url(background-destination-desktop.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          overflow-x: hidden;
+          position: relative;
+      }
+      .navbar{
+          background: rgba(90, 89, 89, 0.3);
+          padding: 40px 15px;
+          width: 700px;
+          position: relative;
+          left: 54.5%;
+          top: -80px;
+          z-index: 10;
+      }
+      .navbar a{
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 20px;
+          color: white;
+          text-decoration: none; 
+          font-weight: bold;
+          margin-left: 40px;
+      }
+      .hr{
+          color: gray;
+          margin-top: 70px;
+          width: 700px;
+          height: 0;
+          position: relative;
+          left: 10%;
+          top: -30px;
+      }
+      .destination-container {
+          text-align: center;
+          color: white;
+        
+      }
+      .destination-container h1 {
+          font-family: 'Times New Roman', Times, serif;
+          text-transform: uppercase;
+          font-size: 80px;
+          margin-bottom: 20px;
+          margin-left: 400px;
+      }
+      .destination-container p {
+          font-size: 18px;
+          width: 500px;
+          line-height: 1.6;
+
+          
+         
+      }
+    
+      .destination-container img {
+          width: 400px;
+          height: 400px;
+          display: flex;
+          text-align:start;
+          margin-left: 260px;
+          margin-top: -250px;
+      }
+      .planets{
+        display: flex;
+        gap: 23px;
+        justify-content: center;
+        text-align: center;
+        margin-left: 465px;
+        cursor: pointer;
+      }
+      .planets a{
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: lighter;
+        color: white;
+        font-size: 20px;
+      }
+      .nol{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        position: relative;
+        left: 18%;
+      }
+      .nol span{
+        color: rgb(190, 191, 192);
+        font-size: 30px;
+      }
+      .nol h1{
+        color: white;
+       }
+       .das{
+        display: flex;
+        text-align: start;
+        flex-direction: column;
+        margin-left: 830px;
+      }
+       .hr-2{
+        width: 480px;
+        margin-top: 10px;
+       }
+       .ups{
+        margin-top: 15px;
+        display: flex;
+        flex-direction: row;
+       }
+       .tt {
+        margin-right: 120px;
+       }
+       .logo {
+        position: relative;
+        left: 25px;
+        top: 70px;
+        width: 50px;
+        height: 50px;
+        }
+     
+  </style>
+</head>
+<body>
+  <div class="up">
+    <img src="logo.svg" alt="Logo" class="logo">
+    <hr class="hr">
+    <div class="navbar">
+        <a href="index.html">00 Home</a>
+        <a href="destination-moon.html">01 Destination</a>
+        <a href="crew-commander.html">02 Crew</a>
+        <a href="technology-capsule.html">03 Technology</a>
+    </div>
+  </div>
+  <div class="nol">
+    <span>01</span>
+    <h1 style="font-weight: lighter; font-family: 'Times New Roman', Times, serif">PICK YOUR DESTINATION</h1>
+  </div>
+  <div class="planets">
+    <a href="destination-moon.html">MOON</a>
+    <a href="destination-mars.html">MARS</a>
+    <a href="destination-europa.html">EUROPA</a>
+    <a href="destination-titan.html">TITAN</a>
+  </div>
+  
+  <div class="destination-container">
+    <h1 id="destination-name"></h1>
+    <div class="das">
+      <p id="destination-description"></p>
+      <hr class="hr-2">
+      <div class="ups">
+        <p ><span style="font-weight: lighter;">Avg. Distance:</span><br> 384,400 km</p>
+        <p class="tt"><span style="font-weight: lighter;">Est. Travel Time:</span><br> 3 days</p>
+      </div>
+    </div>
+    <img id="destination-image" src="" alt="Destination Image">
+  </div>
+
+  <script>
+    const destinations = [
+      {
+        "name": "Moon",
+        "images": {
+          "png": "image-moon.png",
+          "webp": "image-moon.webp"
+        },
+        "description": "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
+        // "distance": "384,400 km",
+        // "travel": "3 days"
+      }
+    ];
+    
+    const destination = destinations[0];
+    document.getElementById("destination-name").textContent = destination.name;
+    document.getElementById("destination-image").src = destination.images.png;
+    document.getElementById("destination-description").textContent = destination.description;
+    // document.getElementById("destination-distance").innerHTML = `Avg. Distance: ${destination.distance}`;
+    // document.getElementById("destination-travel").innerHTML = `Est. Travel Time: ${destination.travel}`;
+  </script>
+</body>
+</html>

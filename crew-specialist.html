@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<style>
+  * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body{
+        background-image: url(background-crew-desktop.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow-x: hidden;
+    }
+    .navbar{
+        background: rgba(90, 89, 89, 0.3);
+        padding: 40px 15px;
+        width: 700px;
+        position: relative;
+        left: 54.5%;
+        top: -100px;
+        z-index: 10;
+        
+    }
+    
+    .navbar a{
+        color: white;
+        text-decoration: none; 
+        font-weight: bold;
+        margin-left: 40px;
+        
+    }
+    .hr{
+        color: gray;
+        margin-top: 70px;
+        width: 700px;
+        height: 0;
+        position: relative;
+        left: 10%;
+        top: -44px;
+    }
+    .nol{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        position: relative;
+        left: 18%;
+    }
+    .nol span{
+      color: rgb(190, 191, 192);
+      font-size: 30px;
+    }
+    .nol h1{
+      color: white;
+    }
+    .adam{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .adam h1{
+      color: white;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: lighter;
+      font-size: 60px;
+    }
+    .adam p{
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: lighter;
+      width: 450px;
+      color: white;
+      line-height: 1.6;
+    }
+    .adam h2{
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: lighter;
+      font-size: 50px;
+    }
+    .box{
+      display: flex;
+      flex-direction: row;
+      gap: 100px;
+      margin-top: 50px;
+      margin-left: 275px;
+    }
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+      
+    }
+
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+    .dos{
+      margin-right: 370px;
+      margin-top: 30px;
+    }
+    .logo {
+          position: relative;
+          left: 25px;
+          top: 60px;
+          width: 50px;
+          height: 50px;
+    }
+   
+        
+</style>
+<body>
+  <div class="up">
+    <img src="logo.svg" alt="Logo" class="logo">
+    <hr class="hr" style="color: gray;">
+    <div class="navbar">
+        <a href ="index.html">00 Home</a>
+        <a href="destination-moon.html">01 Destination</a>
+        <a href="crew-commander.html">02 Crew</a>
+        <a href="technology-capsule.html">03 Technology</a>
+    </div>
+  </div>
+  <div class="nol">
+    <span>02</span>
+    <h1 style="font-weight: lighter; font-family: 'Times New Roman', Times, serif">MEET YOUR CREW</h1>
+  </div>
+  <div class="box">
+    <div class="adam">
+      <h2 id="who" style="color: gray;"></h2>
+      <h1 id="person"></h1>
+      <p id="biog"></p>
+      <div class="dos" style="text-align:center">
+        <span class="dot" onclick="changeSlide(1)"></span> 
+        <span class="dot" onclick="changeSlide(2)"></span> 
+        <span class="dot" onclick="changeSlide(3)"></span> 
+        <span class="dot" onclick="changeSlide(4)"></span>
+
+      </div>
+    </div>
+    <div class="img">
+      <img id="imgof" src="" alt="" style="height: 400px; width: 300px;">
+    </div>
+  </div>
+  
+
+
+  <script>
+    const crew = [
+      {
+        "name": "Mark Shuttleworth",
+        "images": {
+          "png": "./assets/crew/image-mark-shuttleworth.png",
+          "webp": "./assets/crew/image-mark-shuttleworth.webp"
+        },
+        "role": "Mission Specialist",
+        "bio": "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist."
+      }
+    ];
+    const data= crew[0];
+    document.getElementById("who").textContent = data.role;
+    document.getElementById("person").textContent = data.name;
+    document.getElementById("imgof").src =data.images.png;
+    document.getElementById("biog").textContent = data.bio;
+
+    function changeSlide(slideNumber) {
+      switch (slideNumber) {
+          case 1:
+              window.location.href = "crew-commander.html"; // Page for slide 1
+              break;
+          case 2:
+              window.location.href = "crew-engineer.html"; // Page for slide 2
+              break;
+          case 3:
+              window.location.href = "crew-pilot.html"; // Page for slide 3
+              break;
+          case 4:
+              window.location.href = "crew-specialist.html"; // Page for slide 4
+              break;
+          default:
+              console.log("Invalid slide number");
+      }
+  }
+
+  </script>
+  
+</body>
+</html>

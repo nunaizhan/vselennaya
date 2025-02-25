@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+      }
+      body{
+          background-image: url(background-technology-desktop.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          position: relative;
+          overflow-x: hidden;
+      }
+      .navbar{
+          background: rgba(90, 89, 89, 0.3);
+          padding: 40px 15px;
+          width: 700px;
+          position: relative;
+          left: 54.5%;
+          top: -100px;
+          z-index: 10;
+          
+      }
+      
+      .navbar a{
+          color: white;
+          text-decoration: none; 
+          font-weight: bold;
+          margin-left: 40px;
+          
+      }
+      .hr{
+          color: gray;
+          margin-top: 70px;
+          width: 700px;
+          height: 0;
+          position: relative;
+          left: 10%;
+          top: -44px;
+      }
+      .logo {
+          position: relative;
+          left: 25px;
+          top: 60px;
+          width: 50px;
+          height: 50px;
+      }
+      
+      .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: absolute;
+            left: 10%;
+      }
+
+      .btn {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          border: 2px solid white;
+          background: transparent;
+          color: white;
+          font-size: 20px;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+          text-decoration: none;
+      }
+
+      .btn:hover {
+          background: rgba(255, 255, 255, 0.2);
+      }
+
+      .btn.active {
+          background: white;
+          color: black;
+      }
+      .nol{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        position: relative;
+        left: 10%;
+      }
+      .nol span{
+        color: rgb(190, 191, 192);
+        font-size: 30px;
+      }
+      .nol h1{
+        color: white;
+      }
+      .box{
+        display: flex;
+        flex-direction: row;
+      }
+      .img img{
+        width: 400px;
+        height: 400px;
+        margin-left: 500px;
+        margin-top: -60px;
+      }
+      .as{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .as h1{
+        text-transform: uppercase;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: lighter;
+        font-size: 40px;
+        margin-left: 227px;
+        margin-top: 20px;
+      }
+      .as p{
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: lighter;
+        width: 400px;
+        line-height: 1.6;
+        margin-left: 227px;
+      }
+   
+  </style>
+</head>
+<body>
+  <div class="up">
+    <img src="logo.svg" alt="Logo" class="logo">
+    <hr class="hr" style="color: gray;">
+    <div class="navbar">
+        <a href ="index.html">00 Home</a>
+        <a href="destination-moon.html">01 Destination</a>
+        <a href="crew-commander.html">02 Crew</a>
+        <a href="technology-capsule.html">03 Technology</a>
+    </div>
+  </div>
+  <div class="nol">
+    <span>01</span>
+    <h1 style="font-weight: lighter; font-family: 'Times New Roman', Times, serif">SPACE LAUNCH 101</h1>
+  </div>
+  <h1 style="margin-top: 40px; margin-left: 230px; font-size: 40px; color: rgb(128, 126, 126); font-weight: lighter; font-family: 'Times New Roman', Times, serif">THE TERMINOLOGY...</h1>
+  <div class="button-container">
+    <a href="technology-capsule.html" class="btn active">1</a>
+    <a href="technology-spaceport.html" class="btn">2</a>
+    <a href="technology-vehicle.html" class="btn">3</a>
+  </div>
+  <div class="box">
+    <div class="as">
+      <h1 id="name"></h1>
+      <p id="description"></p>
+    </div>
+    <div class="img">
+      <img id="image" src="" alt="">
+    </div>
+  </div>
+<script>
+  const technology = [
+    {
+        "name": "Launch vehicle",
+        "images": {
+          "portrait": "./assets/technology/image-launch-vehicle-portrait.jpg",
+          "landscape": "./assets/technology/image-launch-vehicle-landscape.jpg"
+        },
+        "description": "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!"
+      }
+    ];
+  const tech= technology[0];
+  document.getElementById("name").textContent = tech.name;
+  document.getElementById("image").src =tech.images.portrait;
+  document.getElementById("description").textContent = tech.description;
+</script>
+  
+</body>
+</html>
